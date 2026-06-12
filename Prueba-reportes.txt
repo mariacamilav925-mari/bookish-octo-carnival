@@ -1,0 +1,34 @@
+pregunta7:
+respuesta
+
+Prueba de registro y consulta de reportes
+
+1. Ruta POST: http://localhost:3000/reportes
+Datos enviados (formato JSON):
+{
+  "tipo": "Infraestructura",
+  "descripcion": "Daño en alumbrado público"
+}
+
+Respuesta que devuelve el servidor:
+{
+  "mensaje": "Reporte registrado",
+  "reporte": {
+    "id": 1,
+    "tipo": "Infraestructura",
+    "descripcion": "Daño en alumbrado público"
+  }
+}
+
+2. Ruta GET: http://localhost:3000/reportes
+Respuesta al consultar los datos:
+[
+  {
+    "id": 1,
+    "tipo": "Infraestructura",
+    "descripcion": "Daño en alumbrado público"
+  }
+]
+
+Explicación:
+Al usar POST, se guarda el reporte en la memoria del servidor con un número de identificación automático. Al consultar con GET, el servidor devuelve todos los reportes que se han guardado, organizados en una lista. Cada vez que se agrega un nuevo reporte, este se suma a la lista y aparece al hacer la consulta.
